@@ -50,12 +50,13 @@ class ServerEconomyPlayerMoney extends PluginBase implements Listener {
     // Implement logic to load player balances from storage (e.g., file or database)
     $data = []; // Load data from storage (example)
 
-    if (!empty($data) && is_array($data)) {
+    if (is_array($data)) {
         foreach ($data as $player => $balance) {
             $this->playerBalances[$player] = $balance;
         }
     }
-}
+    }
+    
     
     private function saveBalancesToStorage(): void {
         // Implement logic to save player balances to storage (e.g., file or database)
