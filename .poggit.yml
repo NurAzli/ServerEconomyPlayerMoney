@@ -5,4 +5,5 @@ branches:
 projects:
   ServerEconomyPlayerMoney:
     path: ""
+    PHPStan: false
 ...
