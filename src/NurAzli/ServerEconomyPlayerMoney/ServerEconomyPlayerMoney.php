@@ -23,15 +23,11 @@ class ServerEconomyPlayerMoney extends PluginBase implements Listener {
     public function onEnable(): void {
         $this->getLogger()->info("ServerEconomyPlayerMoney has been enabled.");
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
-
-        // Load saved player balances from storage (e.g., file or database)
         $this->loadBalancesFromStorage();
     }
 
     public function onDisable(): void {
         $this->getLogger()->info("ServerEconomyPlayerMoney has been disabled.");
-
-        // Save player balances to storage (e.g., file or database)
         $this->saveBalancesToStorage();
     }
 
@@ -41,13 +37,10 @@ class ServerEconomyPlayerMoney extends PluginBase implements Listener {
 
     public function setPlayerBalance(string $player, int $amount): void {
         $this->playerBalances[$player] = $amount;
-
-        // Save player balances to storage (e.g., file or database)
         $this->saveBalancesToStorage();
     }
 
     private function loadBalancesFromStorage(): void {
-    // Implement logic to load player balances from storage (e.g., file or database)
     $data = []; // Load data from storage (example)
 
     if (is_array($data) && !empty($data)) {
@@ -58,10 +51,7 @@ class ServerEconomyPlayerMoney extends PluginBase implements Listener {
     }   
     
     private function saveBalancesToStorage(): void {
-        // Implement logic to save player balances to storage (e.g., file or database)
         // Example: $data = $this->playerBalances;
         // Save $data to storage
     }
-
-    // Add any other necessary functions for managing player balances
 }
